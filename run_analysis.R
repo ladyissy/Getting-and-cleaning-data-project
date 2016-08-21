@@ -48,11 +48,14 @@ mean_std_set<-mergedata[,meanandstd==TRUE]
   #3, Use descriptive activity names to name the activities in the data set
 activitynames_set<-merge(mean_std_set,activitylabels,by="activityid",all.x=TRUE)
 
-  #4, Create a second, independent tidy data set with the average of each variable for each activity and each subject
-##4.1, make a second tidy data set
+#4, Approriately labeling the data set with descriptive variable names.
+## this step was made in previous steps (1.3,2.2,2.3)
+
+  #5, Create a second, independent tidy data set with the average of each variable for each activity and each subject
+##5.1, make a second tidy data set
 tidyset<-aggregate(.~subjectid+activityid, activitynames_set,mean)
 tidyset<-tidyset[order(tidyset$subjectid, tidyset$activityid),]
-##4.2, write the second data set into txt file
+##5.2, write the second data set into txt file
 write.table(tidyset,"tidyset.txt",row.name=FALSE)
 
 
