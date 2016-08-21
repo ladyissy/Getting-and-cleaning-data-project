@@ -5,6 +5,7 @@ The data for the project can be downloaded here: https://d396qusza40orc.cloudfro
 
 ##R script
 The file "run_analysis.R" performs the following 5 steps:
+
      1,Merge the training and the test sets to create one data set
      1.0,download the data and unzip dataset
      1.1,read the training and test data sets
